@@ -65,9 +65,8 @@ const Hero = () => {
               Coalition of Organized
             </span>
             <br />
-            <span className="text-red-500 text-glow-red relative">
+            <span className="text-red-500 text-glow-red">
               Robotics & Engineering
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent glow-red-strong rounded-full"></div>
             </span>
           </h1>
           

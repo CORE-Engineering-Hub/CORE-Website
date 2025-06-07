@@ -10,7 +10,9 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setTimeout(() => {
+            setIsVisible(true);
+          }, index * 200); // Staggered animation delay
         }
       },
       { threshold: 0.2 }
@@ -21,15 +23,14 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [index]);
 
   return (
     <div 
       ref={cardRef}
-      className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover-glow-red ${
+      className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover-glow-red transform ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
-      style={{ transitionDelay: `${index * 200}ms` }}
     >
       <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6 mx-auto group-hover:bg-red-600 transition-colors">
         <service.icon className="w-8 h-8 text-red-600" />
