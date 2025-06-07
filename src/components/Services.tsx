@@ -26,7 +26,7 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${
+      className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover-glow-red ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${index * 200}ms` }}

@@ -31,7 +31,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`group p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-500 hover:-translate-y-1 ${
+      className={`group p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-500 hover:-translate-y-1 hover-glow-red ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
@@ -44,7 +44,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
       </div>
       
       {/* Organized skills in a more compact grid layout */}
-      <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-3">
         {category.skills.map((skill: string, skillIndex: number) => (
           <div key={skillIndex} className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 bg-red-500 rounded-full flex-shrink-0"></div>

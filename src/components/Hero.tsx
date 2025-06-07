@@ -65,7 +65,10 @@ const Hero = () => {
               Coalition of Organized
             </span>
             <br />
-            <span className="text-red-500">Robotics & Engineering</span>
+            <span className="text-red-500 text-glow-red relative">
+              Robotics & Engineering
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent glow-red-strong rounded-full"></div>
+            </span>
           </h1>
           
           {/* Subtitle */}
@@ -76,7 +79,7 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-            <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg rounded-full">
+            <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg rounded-full hover-glow-red">
               Join CORE
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
