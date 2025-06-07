@@ -93,25 +93,25 @@ const Skills = () => {
     {
       icon: Hammer,
       title: "Manufacturing",
-      skills: ["CNC Machining", "3D Printing", "Laser Cutting", "Welding", "PCB Assembly"],
+      skills: ["CNC Machining", "3D Printing", "Laser Cutting", "Welding", "PCB Assembly", "Sheet Metal"],
       color: "red"
     },
     {
       icon: Cpu,
       title: "Electronics",
-      skills: ["Circuit Design", "Microcontrollers", "Sensors", "Motor Control", "Power Systems"],
+      skills: ["Circuit Design", "Microcontrollers", "Sensors", "Motor Control", "Power Systems", "Signal Processing"],
       color: "gray"
     },
     {
       icon: Wrench,
       title: "Mechanical",
-      skills: ["Mechanical Design", "Robotics", "Pneumatics", "Gear Systems", "Material Science"],
+      skills: ["Mechanical Design", "Robotics", "Pneumatics", "Gear Systems", "Material Science", "Stress Analysis"],
       color: "red"
     },
     {
       icon: Zap,
       title: "Project Management",
-      skills: ["Agile Methodology", "Team Leadership", "Documentation", "Testing", "Deployment"],
+      skills: ["Agile Methodology", "Team Leadership", "Documentation", "Testing", "Deployment", "Quality Control"],
       color: "gray"
     }
   ];

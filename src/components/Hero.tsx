@@ -59,16 +59,6 @@ const Hero = () => {
       
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Logo/Badge */}
-          <div className="inline-flex items-center gap-3 bg-red-600/20 backdrop-blur-sm border border-red-400/30 rounded-full px-6 py-3 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-            <img 
-              src="/lovable-uploads/229a5a1e-1727-44fa-a62c-137f2956f7da.png" 
-              alt="CORE Logo" 
-              className="w-6 h-6 object-contain"
-            />
-            <span className="text-red-300 font-medium">CORE Club</span>
-          </div>
-          
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
             <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
