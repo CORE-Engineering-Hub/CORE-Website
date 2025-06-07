@@ -1,4 +1,3 @@
-
 import { GraduationCap, DollarSign, Users, Megaphone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -12,10 +11,10 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             setIsVisible(true);
-          }, index * 300); // Increased delay for more noticeable stagger
+          }, index * 200 + 100); // Added base delay + stagger
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (cardRef.current) {
@@ -28,9 +27,12 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-700 ease-out hover:-translate-y-2 hover-glow-red transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-2 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
+      style={{
+        transitionDelay: isVisible ? '0ms' : `${index * 100}ms`
+      }}
     >
       <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6 mx-auto group-hover:bg-red-600 transition-colors">
         <service.icon className="w-8 h-8 text-red-600" />
@@ -41,7 +43,7 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
   );
 };
 
-const Services = () => {
+const Skills = () => {
   const [titleVisible, setTitleVisible] = useState(false);
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -112,4 +114,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Skills;
