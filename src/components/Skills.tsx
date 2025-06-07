@@ -12,7 +12,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             setIsVisible(true);
-          }, index * 150); // Staggered animation delay
+          }, index * 250); // Increased delay for smoother stagger
         }
       },
       { threshold: 0.2 }
@@ -33,8 +33,8 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`group p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-500 hover:-translate-y-1 hover-glow-red transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`group p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-700 ease-out hover:-translate-y-1 hover-glow-red transform ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
       }`}
     >
       <div className="flex items-center gap-4 mb-6">
