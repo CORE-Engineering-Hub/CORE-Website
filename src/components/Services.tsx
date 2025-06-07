@@ -31,36 +31,36 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-slate-50">
+    <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
             How We Support Your Club
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             CORE provides comprehensive support to help STEM clubs thrive through training, funding, and organizational excellence.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-slate-200 hover:border-blue-300">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-red-300">
               <CardHeader>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 group-hover:bg-blue-600 rounded-lg transition-colors duration-300">
-                    <service.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                  <div className="flex items-center justify-center w-12 h-12 bg-gray-100 group-hover:bg-red-600 rounded-lg transition-colors duration-300">
+                    <service.icon className="w-6 h-6 text-red-600 group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <CardTitle className="text-2xl text-slate-900">{service.title}</CardTitle>
+                  <CardTitle className="text-2xl text-black">{service.title}</CardTitle>
                 </div>
-                <CardDescription className="text-slate-600 text-lg leading-relaxed">
+                <CardDescription className="text-gray-600 text-lg leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="grid grid-cols-2 gap-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-2 text-slate-700">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <li key={featureIndex} className="flex items-center gap-2 text-gray-700">
+                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
