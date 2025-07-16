@@ -94,10 +94,10 @@
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #1a1a2e 100%);
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 15%, #1a1a1a 35%, #0f0f0f 50%, #1a1a1a 65%, #0a0a0a 85%, #000000 100%);
     background-attachment: fixed;
     background-size: 400% 400%;
-    animation: gradient-shift 20s ease infinite;
+    animation: gradient-shift 30s ease infinite;
   }
 
   body::before {
@@ -108,12 +108,29 @@
     width: 100%;
     height: 100%;
     background-image: 
-      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-      radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-      radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-      radial-gradient(circle at 60% 60%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 100px 100px, 80px 80px, 120px 120px, 60px 60px;
-    animation: stars-twinkle 8s linear infinite;
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+      radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+      radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+      radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
+      radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+      radial-gradient(circle at 10% 60%, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 150px 150px, 200px 200px, 100px 100px, 250px 250px, 300px 300px, 180px 180px;
+    animation: stars-drift 60s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%),
+      linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.03) 50%, transparent 70%);
+    animation: shooting-stars 15s linear infinite;
     pointer-events: none;
     z-index: -1;
   }
@@ -160,12 +177,45 @@
   }
 }
 
-@keyframes stars-twinkle {
-  0%, 100% {
+@keyframes stars-drift {
+  0% {
+    transform: translateX(0) translateY(0);
     opacity: 1;
   }
+  25% {
+    opacity: 0.7;
+  }
   50% {
-    opacity: 0.5;
+    transform: translateX(10px) translateY(-5px);
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shooting-stars {
+  0% {
+    transform: translateX(-100px) translateY(100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(100px) translateY(-100px);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(200px) translateY(-200px);
+    opacity: 0;
   }
 }
 

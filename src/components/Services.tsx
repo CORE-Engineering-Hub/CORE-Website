@@ -27,7 +27,7 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-2 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-gray-700/50 ${
+      className={`bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-2 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-white/10 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{
@@ -88,7 +88,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-transparent">
+    <section id="services" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black text-white">
       <div className="container mx-auto px-6">
         <div 
           ref={titleRef}

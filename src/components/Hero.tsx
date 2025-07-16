@@ -58,15 +58,15 @@ const Hero = () => {
           {/* Logo */}
           <div className="flex items-center justify-center mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             <div className="relative">
-              <div className="w-32 h-32 md:w-40 md:h-40 border-4 border-white rounded-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center">
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full"></div>
+              <div className="w-32 h-32 md:w-40 md:h-40 border-4 border-red-500 rounded-xl flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl rotate-12">
+                <div className="text-4xl md:text-5xl font-bold text-white">
+                  CORE
                 </div>
               </div>
-              <div className="absolute -top-3 -right-3 w-6 h-6 bg-white rounded-sm rotate-45"></div>
-              <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-white rounded-sm rotate-45"></div>
-              <div className="absolute -top-3 -left-3 w-6 h-6 bg-white rounded-sm rotate-45"></div>
-              <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-white rounded-sm rotate-45"></div>
+              <div className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full"></div>
+              <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-red-500 rounded-full"></div>
+              <div className="absolute -top-2 -left-2 w-4 h-4 bg-red-500 rounded-full"></div>
+              <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-red-500 rounded-full"></div>
             </div>
           </div>
           
