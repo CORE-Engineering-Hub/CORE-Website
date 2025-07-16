@@ -9,12 +9,15 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            setIsVisible(true);
-          }, index * 150 + 100); // Added base delay + stagger
+          // Use requestAnimationFrame for smoother animation trigger
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              setIsVisible(true);
+            }, index * 120); // Slightly staggered for natural flow
+          });
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '30px' } // Start animation earlier
     );
 
     if (cardRef.current) {
@@ -27,29 +30,32 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`group p-6 bg-gray-800/30 backdrop-blur-sm rounded-xl hover:shadow-lg hover:-translate-y-1 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-gray-700/30 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`group relative p-6 bg-gray-800/30 backdrop-blur-sm rounded-xl hover:shadow-2xl transform transition-all duration-[900ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-gray-700/30 overflow-hidden hover:-translate-y-2 hover:scale-105 ${
+        isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'
       }`}
       style={{
-        transitionDelay: isVisible ? '0ms' : `${index * 100}ms`
+        transitionDelay: isVisible ? `${index * 120}ms` : '0ms'
       }}
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white rounded-lg transition-all duration-300">
-          <category.icon className="w-6 h-6 transition-colors duration-300" />
+        <div className="flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white rounded-lg transition-all duration-500 ease-out group-hover:scale-110 group-hover:rotate-3">
+          <category.icon className="w-6 h-6 transition-all duration-500 ease-out" />
         </div>
-        <h3 className="text-xl font-bold text-white">{category.title}</h3>
+        <h3 className="text-xl font-bold text-white group-hover:text-red-100 transition-colors duration-500 ease-out">{category.title}</h3>
       </div>
       
       {/* Organized skills in a more compact grid layout */}
       <div className="grid grid-cols-2 gap-x-6 gap-y-3">
         {category.skills.map((skill: string, skillIndex: number) => (
           <div key={skillIndex} className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 bg-red-500 rounded-full flex-shrink-0"></div>
-            <span className="text-gray-300 text-sm">{skill}</span>
+            <div className="w-1.5 h-1.5 bg-red-500 rounded-full flex-shrink-0 group-hover:bg-red-400 transition-colors duration-500"></div>
+            <span className="text-gray-300 text-sm group-hover:text-gray-200 transition-colors duration-500">{skill}</span>
           </div>
         ))}
       </div>
+      
+      {/* Hover overlay effect */}
+      <div className="absolute inset-0 bg-gradient-to-t from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out rounded-xl pointer-events-none"></div>
     </div>
   );
 };

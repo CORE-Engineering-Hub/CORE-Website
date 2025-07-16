@@ -9,12 +9,15 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            setIsVisible(true);
-          }, index * 200 + 100); // Added base delay + stagger
+          // Use requestAnimationFrame for smoother animation trigger
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              setIsVisible(true);
+            }, index * 100); // Reduced stagger for more natural flow
+          });
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '50px' } // Start animation earlier
     );
 
     if (cardRef.current) {
@@ -27,18 +30,21 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-2 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-white/10 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`relative bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transform transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-white/10 group hover:-translate-y-2 hover:scale-105 ${
+        isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'
       }`}
       style={{
-        transitionDelay: isVisible ? '0ms' : `${index * 100}ms`
+        transitionDelay: isVisible ? `${index * 100}ms` : '0ms'
       }}
     >
-      <div className="flex items-center justify-center w-16 h-16 bg-red-600/20 rounded-full mb-6 mx-auto group-hover:bg-red-600 transition-colors">
-        <service.icon className="w-8 h-8 text-red-400" />
+      <div className="flex items-center justify-center w-16 h-16 bg-red-600/20 rounded-full mb-6 mx-auto transition-all duration-500 ease-out group-hover:bg-red-600/30 group-hover:scale-110 group-hover:rotate-6">
+        <service.icon className="w-8 h-8 text-red-400 transition-all duration-500 ease-out group-hover:text-red-300" />
       </div>
-      <h3 className="text-2xl font-bold text-white mb-4 text-center">{service.title}</h3>
-      <p className="text-gray-300 text-center leading-relaxed">{service.description}</p>
+      <h3 className="text-2xl font-bold text-white mb-4 text-center transition-all duration-500 ease-out group-hover:text-red-100">{service.title}</h3>
+      <p className="text-gray-300 text-center leading-relaxed transition-all duration-500 ease-out group-hover:text-gray-200">{service.description}</p>
+      
+      {/* Hover overlay effect */}
+      <div className="absolute inset-0 bg-gradient-to-t from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out rounded-xl pointer-events-none"></div>
     </div>
   );
 };

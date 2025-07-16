@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 
 // Add multiple shooting stars to the document
-const addShootingStars = () => {
+const addShootingStars = (numStars: number) => {
   // Remove existing shooting stars
   const existingStars = document.querySelectorAll('.shooting-star');
   existingStars.forEach(star => star.remove());
   
   // Create new shooting stars
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < numStars; i++) {
     const star = document.createElement('div');
     star.className = 'shooting-star';
     star.textContent = '✦';
@@ -21,21 +21,21 @@ const addShootingStars = () => {
     let endX, endY;
     
     if (direction < 0.25) {
-      // Go up and right
+      // Go up and right - milder angle
       endX = Math.random() * 80 + 100; // 100vw to 180vw
-      endY = -(Math.random() * 60 + 40); // -40px to -100px
+      endY = -(Math.random() * 30 + 20); // -20px to -50px (reduced from -40 to -100)
     } else if (direction < 0.5) {
-      // Go down and right  
+      // Go down and right - milder angle
       endX = Math.random() * 80 + 100; // 100vw to 180vw
-      endY = Math.random() * 60 + 40; // 40px to 100px
+      endY = Math.random() * 30 + 20; // 20px to 50px (reduced from 40 to 100)
     } else if (direction < 0.75) {
-      // Go way up and right
+      // Go way up and right - milder angle
       endX = Math.random() * 60 + 120; // 120vw to 180vw
-      endY = -(Math.random() * 100 + 80); // -80px to -180px
+      endY = -(Math.random() * 50 + 40); // -40px to -90px (reduced from -80 to -180)
     } else {
-      // Go way down and right
+      // Go way down and right - milder angle
       endX = Math.random() * 60 + 120; // 120vw to 180vw
-      endY = Math.random() * 100 + 80; // 80px to 180px
+      endY = Math.random() * 50 + 40; // 40px to 90px (reduced from 80 to 180)
     }
     
     star.style.top = startTop + '%';
@@ -82,23 +82,30 @@ const addShootingStars = () => {
 
 // Initialize shooting stars when the module loads
 if (typeof window !== 'undefined') {
-  addShootingStars();
+  addShootingStars(2);
   
   // Recreate stars periodically for randomness
   setInterval(() => {
-    addShootingStars();
+    addShootingStars(3);
   }, 36000); // Every 36 seconds (3 * 12s animation cycle)
 }
 
 export default function ShootingStars() {
   useEffect(() => {
-    addShootingStars();
+    addShootingStars(3);
     
     const interval = setInterval(() => {
-      addShootingStars();
+      addShootingStars(3);
     }, 36000);
-    
-    return () => clearInterval(interval);
+
+    const interval2 = setInterval(() => {
+      addShootingStars(1);
+    }, 2500);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(interval2);
+    };
   }, []);
 
   return null;

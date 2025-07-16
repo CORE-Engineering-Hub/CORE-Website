@@ -28,9 +28,9 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-transparent text-white">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left side - Content */}
-          <div>
+          <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               About <span className="text-red-500">CORE</span>
             </h2>
@@ -45,27 +45,27 @@ const About = () => {
               organizational guidance and social media management.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="text-center sm:text-left">
-                <div className="text-3xl font-bold text-red-500">2019</div>
-                <div className="text-gray-400">Founded</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-3xl font-bold text-white">15+</div>
-                <div className="text-gray-400">Partner Clubs</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-3xl font-bold text-gray-300">200+</div>
-                <div className="text-gray-400">Students Impacted</div>
-              </div>
+            {/* Additional content section */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h3 className="text-2xl font-bold text-white mb-4">What Makes Us Different</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Unlike traditional clubs, CORE operates as a comprehensive support network that 
+                amplifies the impact of individual STEM clubs through shared resources, expertise, 
+                and collaborative opportunities.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Our proven track record of successful partnerships and measurable outcomes 
+                demonstrates our commitment to fostering the next generation of innovators and 
+                problem-solvers in the STEM field.
+              </p>
             </div>
           </div>
 
           {/* Right side - Values */}
           <div className="space-y-6">
             {values.map((value, index) => (
-              <div key={index} className="flex items-start gap-4 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all duration-300">
-                <div className="flex items-center justify-center w-12 h-12 bg-red-600/20 backdrop-blur-sm rounded-lg">
+              <div key={index} className="flex items-start gap-4 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all duration-300 border border-white/10">
+                <div className="flex items-center justify-center w-16 h-10 bg-red-600/20 backdrop-blur-sm rounded-xl">
                   <value.icon className="w-6 h-6 text-red-400" />
                 </div>
                 <div>

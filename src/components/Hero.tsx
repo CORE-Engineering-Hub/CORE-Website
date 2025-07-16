@@ -52,7 +52,7 @@ const AnimatedCounter = ({ end, label, icon: Icon, color }: { end: number, label
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-40">
+    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-20">
       {/* Random glow effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-red-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -63,30 +63,29 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Logo */}
-          <div className="flex items-center justify-center mb-12 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <div className="flex items-center justify-center mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             <div className="relative">
-              <div className="w-32 h-32 md:w-40 md:h-40 border-4 border-red-500 rounded-xl flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl rotate-12">
-                <div className="text-4xl md:text-5xl font-bold text-white">
-                  CORE
-                </div>
-              </div>
-              <div className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full"></div>
-              <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-red-500 rounded-full"></div>
-              <div className="absolute -top-2 -left-2 w-4 h-4 bg-red-500 rounded-full"></div>
-              <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-red-500 rounded-full"></div>
+              <img 
+                src="/img/core-logo.png" 
+                alt="CORE Logo" 
+                className="w-56 h-56 md:w-70 md:h-70 object-contain hover:scale-110 transition-transform duration-300 filter drop-shadow-lg"
+              />
             </div>
           </div>
           
           {/* Main heading */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-            <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent text-glow-red">
+          <h1 className="text-6xl md:text-8xl font-bold mb-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+            <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-clip-text text-transparent" style={{ 
+              textShadow: '0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.4), 0 0 60px rgba(220, 38, 38, 0.2)',
+              filter: 'brightness(0.9)'
+            }}>
               CORE
             </span>
           </h1>
           
           {/* Subtitle */}
           <h2 className="text-xl md:text-2xl text-gray-300 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-            Coalition for Organized Resources in Engineering
+            The Coalition for Organized Robotics and Engineering
           </h2>
           
           {/* Description */}
