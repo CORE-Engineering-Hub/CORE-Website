@@ -63,7 +63,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Logo */}
-          <div className="flex items-center justify-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <div className="flex items-center justify-center mb-24 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             <div className="relative">
               <div className="w-32 h-32 md:w-40 md:h-40 border-4 border-red-500 rounded-xl flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl rotate-12">
                 <div className="text-4xl md:text-5xl font-bold text-white">
