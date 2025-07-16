@@ -16,9 +16,27 @@ const addShootingStars = () => {
     const startTop = Math.random() * 100;
     const startLeft = Math.random() * 20 - 10; // -10% to 10%
     
-    // Random angle: some up, some down, various degrees
-    const angleVariation = (Math.random() - 0.5) * 200; // -100px to +100px vertical variation
-    const horizontalDistance = Math.random() * 50 + 100; // 100vw to 150vw horizontal distance
+    // Truly random direction - up, down, diagonal
+    const direction = Math.random();
+    let endX, endY;
+    
+    if (direction < 0.25) {
+      // Go up and right
+      endX = Math.random() * 80 + 100; // 100vw to 180vw
+      endY = -(Math.random() * 60 + 40); // -40px to -100px
+    } else if (direction < 0.5) {
+      // Go down and right  
+      endX = Math.random() * 80 + 100; // 100vw to 180vw
+      endY = Math.random() * 60 + 40; // 40px to 100px
+    } else if (direction < 0.75) {
+      // Go way up and right
+      endX = Math.random() * 60 + 120; // 120vw to 180vw
+      endY = -(Math.random() * 100 + 80); // -80px to -180px
+    } else {
+      // Go way down and right
+      endX = Math.random() * 60 + 120; // 120vw to 180vw
+      endY = Math.random() * 100 + 80; // 80px to 180px
+    }
     
     star.style.top = startTop + '%';
     star.style.left = startLeft + '%';
@@ -37,14 +55,14 @@ const addShootingStars = () => {
           opacity: 1;
         }
         15% {
-          transform: translateX(${horizontalDistance}vw) translateY(${angleVariation}px);
+          transform: translateX(${endX}vw) translateY(${endY}px);
           opacity: 1;
         }
         20% {
           opacity: 0;
         }
         100% {
-          transform: translateX(${horizontalDistance + 50}vw) translateY(${angleVariation * 1.2}px);
+          transform: translateX(${endX + 50}vw) translateY(${endY * 1.2}px);
           opacity: 0;
         }
       }
