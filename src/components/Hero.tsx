@@ -52,7 +52,7 @@ const AnimatedCounter = ({ end, label, icon: Icon, color }: { end: number, label
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-32">
       {/* Random glow effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-red-500/20 rounded-full blur-3xl animate-pulse"></div>
