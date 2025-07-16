@@ -33,7 +33,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`group p-6 bg-gray-50 rounded-xl hover:shadow-lg hover:-translate-y-1 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+      className={`group p-6 bg-gray-800/30 backdrop-blur-sm rounded-xl hover:shadow-lg hover:-translate-y-1 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-gray-700/30 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{
@@ -44,7 +44,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
         <div className={`flex items-center justify-center w-12 h-12 rounded-lg transition-all duration-300 ${colorVariants[category.color]}`}>
           <category.icon className="w-6 h-6 transition-colors duration-300" />
         </div>
-        <h3 className="text-xl font-bold text-black">{category.title}</h3>
+        <h3 className="text-xl font-bold text-white">{category.title}</h3>
       </div>
       
       {/* Organized skills in a more compact grid layout */}
@@ -52,7 +52,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
         {category.skills.map((skill: string, skillIndex: number) => (
           <div key={skillIndex} className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 bg-red-500 rounded-full flex-shrink-0"></div>
-            <span className="text-gray-700 text-sm">{skill}</span>
+            <span className="text-gray-300 text-sm">{skill}</span>
           </div>
         ))}
       </div>
@@ -121,7 +121,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-transparent">
       <div className="container mx-auto px-6">
         <div 
           ref={titleRef}
@@ -129,10 +129,10 @@ const Skills = () => {
             titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             STEM Skills We Teach
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             From programming to manufacturing, we provide comprehensive training across all areas of STEM to prepare you for real-world engineering challenges.
           </p>
         </div>

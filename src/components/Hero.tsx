@@ -52,34 +52,46 @@ const AnimatedCounter = ({ end, label, icon: Icon, color }: { end: number, label
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:50px_50px]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-      
+    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
+          {/* Logo */}
+          <div className="flex items-center justify-center mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+            <div className="relative">
+              <div className="w-32 h-32 md:w-40 md:h-40 border-4 border-white rounded-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full"></div>
+                </div>
+              </div>
+              <div className="absolute -top-3 -right-3 w-6 h-6 bg-white rounded-sm rotate-45"></div>
+              <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-white rounded-sm rotate-45"></div>
+              <div className="absolute -top-3 -left-3 w-6 h-6 bg-white rounded-sm rotate-45"></div>
+              <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-white rounded-sm rotate-45"></div>
+            </div>
+          </div>
+          
           {/* Main heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-            <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
-              Coalition of Organized
-            </span>
-            <br />
-            <span className="text-red-500 text-glow-red">
-              Robotics & Engineering
+          <h1 className="text-6xl md:text-8xl font-bold mb-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+            <span className="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent text-glow-red">
+              CORE
             </span>
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
+          <h2 className="text-xl md:text-2xl text-gray-300 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
+            Coalition for Organized Resources in Engineering
+          </h2>
+          
+          {/* Description */}
+          <p className="text-lg md:text-xl text-gray-400 mb-12 leading-relaxed opacity-0 animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
             Empowering STEM clubs through training, funding, and collaboration.<br />
             Building the next generation of innovators.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
             <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg rounded-full hover-glow-red">
-              Join CORE
+              Get Started
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-black px-8 py-6 text-lg rounded-full bg-transparent">
@@ -87,11 +99,23 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <AnimatedCounter end={15} label="Clubs Supported" icon={Users} color="red" />
-            <AnimatedCounter end={50} label="Skills Workshops" icon={Code} color="gray" />
-            <AnimatedCounter end={10} label="K+ Funding Provided" icon={Wrench} color="red" />
+          {/* Bottom sections */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 opacity-0 animate-fade-in" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>
+            <div className="text-center">
+              <div className="w-full h-px bg-red-600 mb-4"></div>
+              <h3 className="text-xl font-semibold text-white mb-2">Announcements</h3>
+              <p className="text-gray-400 text-sm">Latest updates and news</p>
+            </div>
+            <div className="text-center">
+              <div className="w-full h-px bg-red-600 mb-4"></div>
+              <h3 className="text-xl font-semibold text-white mb-2">Resources</h3>
+              <p className="text-gray-400 text-sm">Training materials and tools</p>
+            </div>
+            <div className="text-center">
+              <div className="w-full h-px bg-red-600 mb-4"></div>
+              <h3 className="text-xl font-semibold text-white mb-2">Events</h3>
+              <p className="text-gray-400 text-sm">Workshops and competitions</p>
+            </div>
           </div>
         </div>
       </div>

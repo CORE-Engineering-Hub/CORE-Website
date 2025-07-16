@@ -27,23 +27,23 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
   return (
     <div 
       ref={cardRef}
-      className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-2 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+      className={`bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-2 hover-glow-red transform transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-gray-700/50 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{
         transitionDelay: isVisible ? '0ms' : `${index * 100}ms`
       }}
     >
-      <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6 mx-auto group-hover:bg-red-600 transition-colors">
-        <service.icon className="w-8 h-8 text-red-600" />
+      <div className="flex items-center justify-center w-16 h-16 bg-red-600/20 rounded-full mb-6 mx-auto group-hover:bg-red-600 transition-colors">
+        <service.icon className="w-8 h-8 text-red-400" />
       </div>
-      <h3 className="text-2xl font-bold text-black mb-4 text-center">{service.title}</h3>
-      <p className="text-gray-600 text-center leading-relaxed">{service.description}</p>
+      <h3 className="text-2xl font-bold text-white mb-4 text-center">{service.title}</h3>
+      <p className="text-gray-300 text-center leading-relaxed">{service.description}</p>
     </div>
   );
 };
 
-const Skills = () => {
+const Services = () => {
   const [titleVisible, setTitleVisible] = useState(false);
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -88,7 +88,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-transparent">
       <div className="container mx-auto px-6">
         <div 
           ref={titleRef}
@@ -96,10 +96,10 @@ const Skills = () => {
             titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             How We Support Your Club
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             CORE provides comprehensive support to help STEM clubs thrive. From technical training to funding assistance, we're here to help you succeed.
           </p>
         </div>
@@ -114,4 +114,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Services;
