@@ -144,6 +144,7 @@
     z-index: -1;
     animation: shooting-star-random 12s linear infinite;
   }
+}
 
 @keyframes fade-in {
   from {
