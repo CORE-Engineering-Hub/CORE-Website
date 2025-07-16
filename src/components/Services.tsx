@@ -88,7 +88,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black text-white">
+    <section id="services" className="py-20 bg-transparent text-white">
       <div className="container mx-auto px-6">
         <div 
           ref={titleRef}

@@ -1,4 +1,3 @@
-
 import { Code, Cpu, Hammer, Wrench, Zap, Monitor } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -25,11 +24,6 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
     return () => observer.disconnect();
   }, [index]);
 
-  const colorVariants = {
-    red: "bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white",
-    gray: "bg-gray-100 text-gray-600 group-hover:bg-gray-600 group-hover:text-white"
-  };
-
   return (
     <div 
       ref={cardRef}
@@ -41,7 +35,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
       }}
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className={`flex items-center justify-center w-12 h-12 rounded-lg transition-all duration-300 ${colorVariants[category.color]}`}>
+        <div className="flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white rounded-lg transition-all duration-300">
           <category.icon className="w-6 h-6 transition-colors duration-300" />
         </div>
         <h3 className="text-xl font-bold text-white">{category.title}</h3>
@@ -85,38 +79,32 @@ const Skills = () => {
     {
       icon: Code,
       title: "Programming",
-      skills: ["Python", "Java", "C++", "JavaScript", "Arduino IDE", "ROS"],
-      color: "red"
+      skills: ["Python", "Java", "C++", "JavaScript", "Arduino IDE", "ROS"]
     },
     {
       icon: Monitor,
       title: "Design & CAD",
-      skills: ["SolidWorks", "Fusion 360", "AutoCAD", "Blender", "KiCad", "Altium"],
-      color: "gray"
+      skills: ["SolidWorks", "Fusion 360", "AutoCAD", "Blender", "KiCad", "Altium"]
     },
     {
       icon: Hammer,
       title: "Manufacturing",
-      skills: ["CNC Machining", "3D Printing", "Laser Cutting", "Welding", "PCB Assembly", "Sheet Metal"],
-      color: "red"
+      skills: ["CNC Machining", "3D Printing", "Laser Cutting", "Welding", "PCB Assembly", "Sheet Metal"]
     },
     {
       icon: Cpu,
       title: "Electronics",
-      skills: ["Circuit Design", "Microcontrollers", "Sensors", "Motor Control", "Power Systems", "Signal Processing"],
-      color: "gray"
+      skills: ["Circuit Design", "Microcontrollers", "Sensors", "Motor Control", "Power Systems", "Signal Processing"]
     },
     {
       icon: Wrench,
       title: "Mechanical",
-      skills: ["Mechanical Design", "Robotics", "Pneumatics", "Gear Systems", "Material Science", "Stress Analysis"],
-      color: "red"
+      skills: ["Mechanical Design", "Robotics", "Pneumatics", "Gear Systems", "Material Science", "Stress Analysis"]
     },
     {
       icon: Zap,
       title: "Project Management",
-      skills: ["Agile Methodology", "Team Leadership", "Documentation", "Testing", "Deployment", "Quality Control"],
-      color: "gray"
+      skills: ["Agile Methodology", "Team Leadership", "Documentation", "Testing", "Deployment", "Quality Control"]
     }
   ];
 

@@ -16,21 +16,11 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-gray-800/50 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/229a5a1e-1727-44fa-a62c-137f2956f7da.png" 
-              alt="CORE Logo" 
-              className="w-10 h-10 object-contain"
-            />
-            <span className="text-xl font-bold bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">CORE</span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+        <div className="flex flex-col items-center justify-center h-24 pt-8">
+          {/* Desktop Navigation - Centered above logo */}
+          <div className="hidden md:flex items-center space-x-8 mb-4">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -45,23 +35,36 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-red-400"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </Button>
+          {/* Logo - Centered */}
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="w-12 h-12 border-2 border-red-500 rounded-lg flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg rotate-12">
+                <div className="text-lg font-bold text-white">
+                  CORE
+                </div>
+              </div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></div>
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
+            </div>
           </div>
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden absolute top-4 right-6">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-gray-300 hover:text-red-400"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800/50 bg-black/95 backdrop-blur-sm">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden absolute top-24 left-0 right-0 py-4 border-t border-gray-800/50 bg-black/95 backdrop-blur-sm">
+            <div className="flex flex-col space-y-4 px-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
