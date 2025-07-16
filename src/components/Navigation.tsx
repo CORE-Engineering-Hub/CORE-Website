@@ -18,9 +18,9 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center justify-center h-24 pt-8">
-          {/* Desktop Navigation - Centered above logo */}
-          <div className="hidden md:flex items-center space-x-8 mb-4">
+        <div className="flex flex-col items-center justify-center h-16 pt-4">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -33,19 +33,6 @@ const Navigation = () => {
             <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-md hover:shadow-lg transition-all duration-200">
               Get Started
             </Button>
-          </div>
-
-          {/* Logo - Centered */}
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-12 h-12 border-2 border-red-500 rounded-lg flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg rotate-12">
-                <div className="text-lg font-bold text-white">
-                  CORE
-                </div>
-              </div>
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></div>
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
-            </div>
           </div>
         </div>
 
