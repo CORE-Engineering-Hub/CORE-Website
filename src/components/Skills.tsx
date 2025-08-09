@@ -13,7 +13,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
           requestAnimationFrame(() => {
             setTimeout(() => {
               setIsVisible(true);
-            }, index * 120); // Slightly staggered for natural flow
+            }, index * 90); // Faster staggered animation
           });
         }
       },
@@ -34,7 +34,7 @@ const SkillCard = ({ category, index }: { category: any, index: number }) => {
         isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'
       }`}
       style={{
-        transitionDelay: isVisible ? `${index * 120}ms` : '0ms'
+        transitionDelay: isVisible ? `${index * 90}ms` : '0ms'
       }}
     >
       <div className="flex items-center gap-4 mb-6">
