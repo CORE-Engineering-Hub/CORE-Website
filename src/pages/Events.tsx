@@ -65,6 +65,11 @@ const Events = () => {
       title: "Officer Meetings",
       schedule: "First Monday of each month, 7:00 PM",
       description: "Leadership team planning and coordination meetings"
+    },
+    {
+      title: "Interest Meeting",
+      schedule: "September 3rd, 2025 at something PM",
+      description: "Give rookies and returning members an overview of the club and its activities"
     }
   ];
 
@@ -189,10 +194,13 @@ const Events = () => {
           <h2 className="text-4xl font-bold text-white text-center mb-12">Regular Schedule</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recurringEvents.map((event, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-b from-red-600/10 to-red-700/5 backdrop-blur-sm rounded-xl border border-red-500/30">
-                <h3 className="text-xl font-bold text-white mb-3">{event.title}</h3>
-                <div className="text-red-400 font-semibold mb-4">{event.schedule}</div>
-                <p className="text-gray-300 text-sm">{event.description}</p>
+              <div 
+                key={index} 
+                className="text-center p-4 bg-gradient-to-b from-red-600/10 to-red-700/5 backdrop-blur-sm rounded-xl border border-red-500/30">
+                  ${event.title === "Interest Meeting" ? 'md:col-start-2' : ''}
+                <h3 className="text-lg font-bold text-white mb-2">{event.title}</h3>
+                <div className="text-red-400 font-semibold mb-3 text-sm">{event.schedule}</div>
+                <p className="text-gray-300 text-xs">{event.description}</p>
               </div>
             ))}
           </div>

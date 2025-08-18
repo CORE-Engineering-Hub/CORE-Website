@@ -1,6 +1,6 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Bot, MapPin } from "lucide-react";
 
 const ContactPage = () => {
   return (
@@ -24,15 +24,15 @@ const ContactPage = () => {
               <Mail className="w-6 h-6 text-red-400" />
               <div>
                 <h3 className="text-white font-semibold">Email</h3>
-                <p className="text-gray-300">info@core-engineering.org</p>
+                <p className="text-gray-300">fchscore@gmail.com</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg border border-white/10">
-              <Phone className="w-6 h-6 text-red-400" />
+              <Bot className="w-6 h-6 text-red-400" />
               <div>
-                <h3 className="text-white font-semibold">Phone</h3>
-                <p className="text-gray-300">(555) 123-CORE</p>
+                <h3 className="text-white font-semibold">Discord</h3>
+                <p className="text-gray-300">https://discord.gg/HRFkebjZ</p>
               </div>
             </div>
 
@@ -40,7 +40,7 @@ const ContactPage = () => {
               <MapPin className="w-6 h-6 text-red-400" />
               <div>
                 <h3 className="text-white font-semibold">Location</h3>
-                <p className="text-gray-300">Engineering Building, Room 205</p>
+                <p className="text-gray-300">Engineering Building, Room 120</p>
               </div>
             </div>
           </div>

@@ -5,19 +5,64 @@ import { Users, Target, Lightbulb, Award } from "lucide-react";
 const AboutUs = () => {
   const leadership = [
     {
-      name: "Dr. Sarah Johnson",
-      title: "Executive Director",
+      name: "Adam Brown",
+      title: "President",
       description: "Leading STEM education initiatives for over 15 years"
     },
     {
-      name: "Michael Chen",
-      title: "Technical Director",
+      name: "Srinikesh Atluri",
+      title: "Vice President",
       description: "Robotics engineer with expertise in competition coaching"
     },
     {
-      name: "Emma Rodriguez",
-      title: "Training Coordinator",
+      name: "Anubhav Nagammanavar",
+      title: "Director of Finance",
       description: "Specializes in curriculum development and student mentorship"
+    },
+    {
+      name: "Nishanth Manivannan",
+      title: "Director of Communications",
+      description: "Sntorship"
+    },
+    {
+      name: "Bhavesh Naru",
+      title: "Director of Outreach",
+      description: "Sntorship"
+    },
+    {
+      name: "Rishith",
+      title: "Director of CAD Training",
+      description: "Sntorship"
+    },
+    {
+      name: "Isaac",
+      title: "Director of Manufacturing Training",
+      description: "Sntorship"
+    },
+    {
+      name: "Shubham Prasad",
+      title: "Director of Programming Training",
+      description: "Sntorship"
+    },
+    {
+      name: "Abhiveer Sarpabhushan",
+      title: "Sponsorship and Grant Lead",
+      description: "Sntorship"
+    },
+    {
+      name: "Aasrith Ravulapati",
+      title: "Treasurer",
+      description: "Sntorship"
+    },
+    {
+      name: "Rushil Patel",
+      title: "Technology Systems Lead",
+      description: "Sntorship"
+    },
+    {
+      name: "Ryan Wolf",
+      title: "Digital Content Manager",
+      description: "Sntorship"
     }
   ];
 

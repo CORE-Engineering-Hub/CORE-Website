@@ -167,7 +167,13 @@ const Training = () => {
                 <p className="text-gray-300">Industry professionals and educators</p>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
+                <div className="text-center">
+                  <h4 className="text-xl font-bold text-red-400 mb-2">Resignation</h4>
+                  <p className="text-gray-300">Open for resignation until September 3rd, 2025</p>
+                </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <a
                 href="/contact"
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"

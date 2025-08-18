@@ -1,5 +1,4 @@
-
-import { Mail, MessageSquare, Users, MapPin } from "lucide-react";
+import { Mail, MessageSquare, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -65,46 +64,13 @@ const Contact = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button variant="outline" className="w-full border-red-400 text-red-400 hover:bg-red-600 hover:text-white">
+              <Button
+                className="w-full bg-red-600 hover:bg-red-700 hover:text-white"
+              >
                 Send Message
               </Button>
             </CardContent>
           </Card>
-        </div>
-
-        {/* Contact Details */}
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-700/50">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-red-400" />
-                  <span className="text-gray-300">core.club@school.edu</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-red-400" />
-                  <span className="text-gray-300">Engineering Building, Room 201</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Users className="w-5 h-5 text-red-400" />
-                  <span className="text-gray-300">Meetings: Tuesdays & Thursdays, 3:30 PM</span>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Quick Links</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <a href="#" className="text-red-400 hover:text-red-300 transition-colors">Club Application</a>
-                <a href="#" className="text-red-400 hover:text-red-300 transition-colors">Training Schedule</a>
-                <a href="#" className="text-red-400 hover:text-red-300 transition-colors">Funding Guidelines</a>
-                <a href="#" className="text-red-400 hover:text-red-300 transition-colors">Social Media Kit</a>
-                <a href="#" className="text-red-400 hover:text-red-300 transition-colors">Success Stories</a>
-                <a href="#" className="text-red-400 hover:text-red-300 transition-colors">FAQ</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
