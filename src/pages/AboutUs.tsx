@@ -1,3 +1,5 @@
+import srin from "../images/srin.jpg";
+import rishithpic from "../images/rishith.jpg";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Users, Target, Lightbulb, Award } from "lucide-react";
@@ -7,62 +9,64 @@ const AboutUs = () => {
     {
       name: "Adam Brown",
       title: "President",
-      description: "Leading STEM education initiatives for over 15 years"
+      description: "The President is responsible for overseeing CORE’s overall operations, maintaining alignment between departments, and acting as the primary liaison to the faculty advisor and external partners."
     },
     {
       name: "Srinikesh Atluri",
       title: "Vice President",
-      description: "Robotics engineer with expertise in competition coaching"
+      photo: srin,
+      description: "The Vice President supervises all training programs and department directors, ensuring curriculum quality, instructor accountability, and consistent educational standards."
     },
     {
       name: "Anubhav Nagammanavar",
       title: "Director of Finance",
-      description: "Specializes in curriculum development and student mentorship"
+      description: "The Finance Director oversees financial planning, including dues collection, budget management, and financial reporting. They work with the Treasurer to ensure transparency and compliance."
     },
     {
       name: "Nishanth Manivannan",
       title: "Director of Communications",
-      description: "Sntorship"
+      description: "This officer manages CORE’s digital communication platforms (e.g., Discord, Slack), enforces online conduct policies, and ensures appropriate use of all messaging and collaboration tools."
     },
     {
       name: "Bhavesh Naru",
       title: "Director of Outreach",
-      description: "Sntorship"
+      description: "Coordinates planning and promotion of CORE events, ensures documentation of student involvement, and enhances public visibility."
     },
     {
-      name: "Rishith",
+      name: "Rishith Sajishkumar",
       title: "Director of CAD Training",
-      description: "Sntorship"
+      photo: rishithpic,
+      description: "Oversees SolidWorks instruction and CSWA preparation."
     },
     {
-      name: "Isaac",
+      name: "Isaac ",
       title: "Director of Manufacturing Training",
-      description: "Sntorship"
+      description: "Leads safety training, equipment usage, and physical prototyping."
     },
     {
       name: "Shubham Prasad",
       title: "Director of Programming Training",
-      description: "Sntorship"
+      description: "Instructs students in Arduino, Java, circuits, and digital logic."
     },
     {
       name: "Abhiveer Sarpabhushan",
       title: "Sponsorship and Grant Lead",
-      description: "Sntorship"
+      description: "Secures funding through sponsors and grant programs, and manages ongoing partnerships."
     },
     {
       name: "Aasrith Ravulapati",
       title: "Treasurer",
-      description: "Sntorship"
+      description: "Supports the Finance Director by collecting dues, recording daily transactions, and managing class and event expenses."
     },
     {
       name: "Rushil Patel",
       title: "Technology Systems Lead",
-      description: "Sntorship"
+      description: "Maintains CORE’s online infrastructure, including registration portals and internal databases."
     },
     {
       name: "Ryan Wolf",
       title: "Digital Content Manager",
-      description: "Sntorship"
+      description: "Creates and archives instructional materials, media content, and promotional visuals."
     }
   ];
 
@@ -126,8 +130,8 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {leadership.map((member, index) => (
               <div key={index} className="text-center p-8 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/30">
-                <div className="w-24 h-24 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center">
-                  <Users className="w-12 h-12 text-gray-400" />
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
                 <p className="text-red-400 font-semibold mb-3">{member.title}</p>
