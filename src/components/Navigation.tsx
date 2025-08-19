@@ -10,8 +10,6 @@ const Navigation = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Training", href: "/training" },
-    { name: "Certifications", href: "/certifications" },
-    { name: "Events", href: "/events" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -30,9 +28,6 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-md hover:shadow-lg transition-all duration-200">
-              Get Started
-            </Button>
           </div>
         </div>
 
@@ -62,9 +57,6 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white w-fit">
-                Get Started
-              </Button>
             </div>
           </div>
         )}

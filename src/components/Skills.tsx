@@ -97,21 +97,6 @@ const Skills = () => {
       title: "Manufacturing",
       skills: ["CNC Machining", "3D Printing", "Laser Cutting", "Welding", "PCB Assembly", "Sheet Metal"]
     },
-    {
-      icon: Cpu,
-      title: "Electronics",
-      skills: ["Circuit Design", "Microcontrollers", "Sensors", "Motor Control", "Power Systems", "Signal Processing"]
-    },
-    {
-      icon: Wrench,
-      title: "Mechanical",
-      skills: ["Mechanical Design", "Robotics", "Pneumatics", "Gear Systems", "Material Science", "Stress Analysis"]
-    },
-    {
-      icon: Zap,
-      title: "Project Management",
-      skills: ["Agile Methodology", "Team Leadership", "Documentation", "Testing", "Deployment", "Quality Control"]
-    }
   ];
 
   return (
@@ -138,12 +123,6 @@ const Skills = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1">
-            <Zap className="w-5 h-5" />
-            <span>Start Learning Today</span>
-          </div>
-        </div>
       </div>
     </section>
   );

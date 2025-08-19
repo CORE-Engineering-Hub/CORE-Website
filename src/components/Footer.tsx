@@ -1,5 +1,5 @@
 
-import { Github, Instagram, Twitter, Mail } from "lucide-react";
+import { Bot, Instagram, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -20,18 +20,13 @@ const Footer = () => {
               Coalition of Organized Robotics and Engineering - empowering STEM clubs through training, funding, and collaboration.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-red-600 transition-colors">
-                <Github className="w-5 h-5" />
+              <a href="https://discord.gg/5AvVPaDPYq" className="p-2 bg-gray-800 rounded-lg hover:bg-red-600 transition-colors">
+                <Bot className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-red-600 transition-colors">
+              <a href="https://www.instagram.com/fchs.core/" className="p-2 bg-gray-800 rounded-lg hover:bg-red-600 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-red-600 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-red-600 transition-colors">
-                <Mail className="w-5 h-5" />
-              </a>
+
             </div>
           </div>
 
@@ -39,10 +34,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-gray-400 hover:text-red-400 transition-colors">Services</a></li>
-              <li><a href="#skills" className="text-gray-400 hover:text-red-400 transition-colors">Skills</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-red-400 transition-colors">About</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-red-400 transition-colors">Contact</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-red-400 transition-colors">About Us</a></li>
+              <li><a href="/training" className="text-gray-400 hover:text-red-400 transition-colors">Training</a></li>
+              <li><a href="/contact" className="text-gray-400 hover:text-red-400 transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -50,10 +44,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-red-400 transition-colors">Training Materials</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-red-400 transition-colors">Funding Guide</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-red-400 transition-colors">Club Handbook</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-red-400 transition-colors">Success Stories</a></li>
+              <li><a href="https://docs.google.com/document/d/1RsrB3O3R0b6u1r1ErjZrCF-kD2gMGAzxkx1JxjdoXZM/edit?tab=t.0#heading=h.6hrzu51dfg4e" className="text-gray-400 hover:text-red-400 transition-colors">Club Handbook</a></li>
             </ul>
           </div>
         </div>

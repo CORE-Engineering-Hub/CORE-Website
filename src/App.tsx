@@ -9,8 +9,6 @@ import ShootingStars from "./components/ShootingStars";
 // Added page imports
 import AboutUs from "./pages/AboutUs";
 import Training from "./pages/Training";
-import Certifications from "./pages/Certifications";
-import Events from "./pages/Events";
 import ContactPage from "./pages/ContactPage";
 
 const queryClient = new QueryClient();
@@ -27,8 +25,6 @@ const App = () => (
           {/* Added custom routes */}
           <Route path="/about" element={<AboutUs />} />
           <Route path="/training" element={<Training />} />
-          <Route path="/certifications" element={<Certifications />} />
-          <Route path="/events" element={<Events/>} />
           <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

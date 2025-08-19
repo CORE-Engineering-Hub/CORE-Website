@@ -72,7 +72,6 @@ const NotFound = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <a href="/about" className="text-gray-300 hover:text-red-400 transition-colors">About Us</a>
                 <a href="/training" className="text-gray-300 hover:text-red-400 transition-colors">Training</a>
-                <a href="/certifications" className="text-gray-300 hover:text-red-400 transition-colors">Certifications</a>
                 <a href="/contact" className="text-gray-300 hover:text-red-400 transition-colors">Contact</a>
               </div>
             </div>

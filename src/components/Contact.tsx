@@ -15,25 +15,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {/* For Clubs */}
-          <Card className="hover:shadow-lg transition-all duration-300 bg-gray-800/50 backdrop-blur-sm border-gray-700/50">
-            <CardHeader>
-              <div className="flex items-center justify-center w-12 h-12 bg-red-600/20 rounded-lg mb-4">
-                <Users className="w-6 h-6 text-red-400" />
-              </div>
-              <CardTitle className="text-xl text-white">For STEM Clubs</CardTitle>
-              <CardDescription className="text-gray-300">
-                Partner with us to access training, funding, and organizational support for your club.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button className="w-full bg-red-600 hover:bg-red-700">
-                Apply for Partnership
-              </Button>
-            </CardContent>
-          </Card>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* For Students */}
           <Card className="hover:shadow-lg transition-all duration-300 bg-gray-800/50 backdrop-blur-sm border-gray-700/50">
             <CardHeader>
@@ -46,8 +28,8 @@ const Contact = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="w-full bg-red-600 hover:bg-red-700">
-                Join CORE
+              <Button asChild className="w-full bg-red-600 hover:bg-red-700">
+                <a href="https://discord.gg/5AvVPaDPYq">Join CORE</a>
               </Button>
             </CardContent>
           </Card>
@@ -65,9 +47,10 @@ const Contact = () => {
             </CardHeader>
             <CardContent>
               <Button
+                asChild
                 className="w-full bg-red-600 hover:bg-red-700 hover:text-white"
               >
-                Send Message
+                <a href="/contact">Send Message</a>
               </Button>
             </CardContent>
           </Card>

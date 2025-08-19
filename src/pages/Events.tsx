@@ -68,7 +68,7 @@ const Events = () => {
     },
     {
       title: "Interest Meeting",
-      schedule: "September 3rd, 2025 at something PM",
+      schedule: "September 3rd, 2025 at 4 PM",
       description: "Give rookies and returning members an overview of the club and its activities"
     }
   ];
