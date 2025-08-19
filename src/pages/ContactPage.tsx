@@ -1,8 +1,29 @@
+import { useState } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Mail, Bot, MapPin } from "lucide-react";
 
 const ContactPage = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href = `mailto:nithin02112009@gmail.com?subject=${encodeURIComponent(
+      form.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    )}`;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Navigation />
@@ -19,7 +40,7 @@ const ContactPage = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white mb-6">Get In Touch</h2>
-            
+
             <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg border border-white/10">
               <Mail className="w-6 h-6 text-red-400" />
               <div>
@@ -48,43 +69,55 @@ const ContactPage = () => {
           {/* Contact Form */}
           <div className="bg-white/5 rounded-xl p-6 border border-white/10">
             <h2 className="text-2xl font-bold text-white mb-6">Send Message</h2>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-white font-medium mb-2">Name</label>
                 <input
                   type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none"
                   placeholder="Your name"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-white font-medium mb-2">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none"
                   placeholder="your.email@example.com"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-white font-medium mb-2">Subject</label>
                 <input
                   type="text"
+                  name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none"
                   placeholder="What's this about?"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-white font-medium mb-2">Message</label>
                 <textarea
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none resize-none"
                   placeholder="Tell us more..."
                 ></textarea>
               </div>
-              
+
               <button
                 type="submit"
                 className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
