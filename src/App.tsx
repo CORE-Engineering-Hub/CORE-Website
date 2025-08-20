@@ -11,6 +11,14 @@ import AboutUs from "./pages/AboutUs";
 import Training from "./pages/Training";
 import ContactPage from "./pages/ContactPage";
 import ClubHandbook from "./pages/ClubHandbook";
+import PartneredClubs from "./pages/PartneredClubs";
+
+// ✅ Import your individual club pages
+import MAA from "./pages/clubs/MAA";
+// import Physics from "./pages/clubs/Physics";
+// import Rocketry from "./pages/clubs/Rocketry";
+// import STEMRacing from "./pages/clubs/STEMRacing";
+// import Astronomy from "./pages/clubs/Astronomy";
 
 const queryClient = new QueryClient();
 
@@ -22,14 +30,24 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Main pages */}
           <Route path="/" element={<Index />} />
-          {/* Added custom routes */}
           <Route path="/about" element={<AboutUs />} />
           <Route path="/training" element={<Training />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/handbook" element={<ClubHandbook />} />
-          {/* Catch-all route for 404 */}
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/partner" element={<PartneredClubs />} />
+
+          {/* ✅ Club-specific routes */}
+          <Route path="/clubs/MAA" element={<MAA />} />
+          {/* Add more as you create them:
+          <Route path="/clubs/Physics" element={<Physics />} />
+          <Route path="/clubs/Rocketry" element={<Rocketry />} />
+          <Route path="/clubs/STEMRacing" element={<STEMRacing />} />
+          <Route path="/clubs/Astronomy" element={<Astronomy />} />
+          */}
+
+          {/* Catch-all 404 route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

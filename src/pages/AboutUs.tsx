@@ -14,7 +14,6 @@ const AboutUs = () => {
     {
       name: "Srinikesh Atluri",
       title: "Vice President",
-      photo: srin,
       description: "The Vice President supervises all training programs and department directors, ensuring curriculum quality, instructor accountability, and consistent educational standards."
     },
     {
@@ -35,7 +34,6 @@ const AboutUs = () => {
     {
       name: "Rishith Sajishkumar",
       title: "Director of CAD Training",
-      photo: rishithpic,
       description: "Oversees SolidWorks instruction and CSWA preparation."
     },
     {
