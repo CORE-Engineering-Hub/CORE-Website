@@ -10,6 +10,7 @@ import ShootingStars from "./components/ShootingStars";
 import AboutUs from "./pages/AboutUs";
 import Training from "./pages/Training";
 import ContactPage from "./pages/ContactPage";
+import ClubHandbook from "./pages/ClubHandbook";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,8 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/training" element={<Training />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/handbook" element={<ClubHandbook />} />
+          {/* Catch-all route for 404 */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

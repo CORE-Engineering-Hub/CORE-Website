@@ -124,7 +124,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Leadership Team */}
+                {/* Leadership Team */}
         <div className="container mx-auto px-6 mb-20">
           <h2 className="text-4xl font-bold text-white text-center mb-12">Our Leadership</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -138,30 +138,6 @@ const AboutUs = () => {
                 <p className="text-gray-300">{member.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="container mx-auto px-6 text-center">
-          <div className="bg-gradient-to-r from-red-600/20 to-red-700/20 backdrop-blur-sm border border-red-500/30 rounded-2xl p-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Ready to Get Started?</h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join the growing network of STEM clubs that are making a difference through CORE's comprehensive programs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/training"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
-              >
-                Explore Training
-              </a>
-              <a
-                href="/contact"
-                className="border border-red-500 text-red-400 hover:bg-red-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
-              >
-                Contact Us
-              </a>
-            </div>
           </div>
         </div>
       </div>

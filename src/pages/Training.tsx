@@ -1,6 +1,6 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import { Code, Cpu, Hammer, Monitor, Users, Clock, CheckCircle } from "lucide-react";
+import { Code, Atom, Hammer, Monitor, Users, Clock, CheckCircle } from "lucide-react";
 
 const Training = () => {
   const courses = [
@@ -11,7 +11,7 @@ const Training = () => {
       duration: "6 weeks",
       description: "Learn Python, Java, and C++ programming with hands-on robotics applications.",
       prerequisites: "None",
-      topics: ["Python Basics", "Object-Oriented Programming", "Arduino IDE", "Robot Control Systems"]
+      topics: ["Python", "Java", "Javascript", "C++", "HTML", "CSS"]
     },
     {
       icon: Monitor,
@@ -20,16 +20,16 @@ const Training = () => {
       duration: "8 weeks",
       description: "Master SolidWorks and Fusion 360 for mechanical design and prototyping.",
       prerequisites: "Basic computer skills",
-      topics: ["SolidWorks Fundamentals", "3D Modeling", "Assembly Design", "Technical Drawings"]
+      topics: ["SolidWorks", "Fusion 360"]
     },
     {
-      icon: Cpu,
-      title: "Electronics & Circuits",
+      icon: Atom,
+      title: "Physics Olympiad",
       level: "Intermediate",
       duration: "10 weeks",
-      description: "Understand circuit design, microcontrollers, and sensor integration.",
-      prerequisites: "Basic programming knowledge",
-      topics: ["Circuit Analysis", "Microcontroller Programming", "Sensor Integration", "PCB Design"]
+      description: "Prepare for national and international physics competitions with focused problem-solving sessions and exam strategies.",
+      prerequisites: "Basic physics knowledge",
+      topics: ["F=MA", "Sir Isaac Newton Exam Training", "Physics Bowl"]
     },
     {
       icon: Hammer,
@@ -38,7 +38,7 @@ const Training = () => {
       duration: "12 weeks",
       description: "Learn CNC machining, 3D printing, and advanced manufacturing techniques.",
       prerequisites: "CAD experience recommended",
-      topics: ["CNC Programming", "3D Printing", "Material Selection", "Quality Control"]
+      topics: ["CNC Machine", "3D Printing", "Laser Cutter", "Bandsaw", "Drill Press", "Lathe Machine"]
     }
   ];
 
@@ -48,16 +48,6 @@ const Training = () => {
       description: "Prepare for the Certified SOLIDWORKS Associate exam with comprehensive training.",
       duration: "4 weeks intensive"
     },
-    {
-      title: "Arduino Certified",
-      description: "Become certified in Arduino programming and electronics integration.",
-      duration: "6 weeks"
-    },
-    {
-      title: "Project Management",
-      description: "Learn agile methodology and team leadership for engineering projects.",
-      duration: "5 weeks"
-    }
   ];
 
   return (
@@ -125,71 +115,16 @@ const Training = () => {
         {/* Certification Paths */}
         <div className="container mx-auto px-6 mb-20">
           <h2 className="text-4xl font-bold text-white text-center mb-12">Certification Opportunities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {certificationPaths.map((cert, index) => (
-              <div key={index} className="text-center p-8 bg-gradient-to-b from-red-600/10 to-red-700/5 backdrop-blur-sm rounded-xl border border-red-500/30">
-                <h3 className="text-2xl font-bold text-white mb-4">{cert.title}</h3>
-                <p className="text-gray-300 mb-6">{cert.description}</p>
-                <div className="flex items-center justify-center gap-2 text-red-400 mb-6">
-                  <Clock className="w-5 h-5" />
-                  <span className="font-semibold">{cert.duration}</span>
-                </div>
-                <a
-                  href="/certifications"
-                  className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
-                >
-                  Learn More
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Enrollment Information */}
-        <div className="container mx-auto px-6 text-center">
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-6">Ready to Start Learning?</h2>
-            <p className="text-gray-300 mb-8 text-lg">
-              Our training programs are designed for students, educators, and club leaders who want to build 
-              practical STEM skills. Classes are limited in size to ensure personalized attention.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <h4 className="text-xl font-bold text-red-400 mb-2">Small Class Sizes</h4>
-                <p className="text-gray-300">Maximum 12 students per class</p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-xl font-bold text-red-400 mb-2">Hands-On Learning</h4>
-                <p className="text-gray-300">Real projects and equipment</p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-xl font-bold text-red-400 mb-2">Expert Instructors</h4>
-                <p className="text-gray-300">Industry professionals and educators</p>
-              </div>
-            </div>
             <div className="flex justify-center">
-                <div className="text-center">
-                  <h4 className="text-xl font-bold text-red-400 mb-2">Resignation</h4>
-                  <p className="text-gray-300">Open for resignation until September 3rd, 2025</p>
+              {certificationPaths.map((cert, index) => (
+                <div key={index} className="w-full md:w-2/3 text-center p-8 bg-gradient-to-b from-red-600/10 to-red-700/5 backdrop-blur-sm rounded-xl border border-red-500/30">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">{cert.title}</h3>
+                  <p className="text-gray-300 text-lg">{cert.description}</p>
                 </div>
+              ))}
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <a
-                href="/contact"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
-              >
-                Register Now
-              </a>
-              <a
-                href="/events"
-                className="border border-red-500 text-red-400 hover:bg-red-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
-              >
-                View Schedule
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
+      </div> {/* 👈 closes the main pt-24 pb-12 wrapper */}
 
       <Footer />
     </div>

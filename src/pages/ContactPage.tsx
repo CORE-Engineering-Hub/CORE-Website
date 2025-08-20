@@ -11,17 +11,36 @@ const ContactPage = () => {
     message: "",
   });
 
+  const [status, setStatus] = useState(""); // for showing result message
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    window.location.href = `mailto:nithin02112009@gmail.com?subject=${encodeURIComponent(
-      form.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-    )}`;
+    setStatus("Sending...");
+
+    const formData = new FormData();
+    formData.append("access_key", "7739b827-ef59-4a66-9203-6a8b51c564e6"); // ⬅️ replace with your Web3Forms access key
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("subject", form.subject);
+    formData.append("message", form.message);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setStatus("Message sent successfully ✅");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } else {
+      setStatus("Something went wrong ❌: " + data.message);
+    }
   };
 
   return (
@@ -77,6 +96,7 @@ const ContactPage = () => {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
+                  required
                   className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none"
                   placeholder="Your name"
                 />
@@ -89,6 +109,7 @@ const ContactPage = () => {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
+                  required
                   className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none"
                   placeholder="your.email@example.com"
                 />
@@ -101,6 +122,7 @@ const ContactPage = () => {
                   name="subject"
                   value={form.subject}
                   onChange={handleChange}
+                  required
                   className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none"
                   placeholder="What's this about?"
                 />
@@ -113,6 +135,7 @@ const ContactPage = () => {
                   value={form.message}
                   onChange={handleChange}
                   rows={4}
+                  required
                   className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none resize-none"
                   placeholder="Tell us more..."
                 ></textarea>
@@ -125,6 +148,10 @@ const ContactPage = () => {
                 Send Message
               </button>
             </form>
+
+            {status && (
+              <p className="mt-4 text-center text-gray-300">{status}</p>
+            )}
           </div>
         </div>
       </main>
